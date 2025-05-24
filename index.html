@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>¡Fiesta de 16 Años de [Nombre]!</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background: #ffebf3; text-align: center; }
+        .header { background: #ff66b3; padding: 20px; color: white; }
+        .photo { border-radius: 50%; width: 200px; border: 5px solid gold; }
+        .details { background: white; padding: 20px; margin: 20px; border-radius: 10px; }
+        .countdown { font-size: 24px; color: #d40078; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>¡Estás invitado/a a mis 16!</h1>
+        <img src="TU-FOTO.jpg" class="photo" alt="Foto cumpleañero/a">
+        <h2>¡No te lo pierdas!</h2>
+    </div>
+
+    <div class="details">
+        <p>📅 <strong>Fecha:</strong> 15 de Noviembre de 2025</p>
+        <p>⏰ <strong>Hora:</strong> 8:00 PM</p>
+        <p>📍 <strong>Lugar:</strong> Salón Jardín Primavera, Ciudad</p>
+        <p>🎩 <strong>Dresscode:</strong> Elegante & Glam</p>
+    </div>
+
+    <div class="countdown" id="countdown"></div>
+
+    <div class="details">
+        <h3>Confirma tu asistencia</h3>
+        <a href="https://wa.me/5215512345678" style="background: #25D366; color: white; padding: 10px; border-radius: 5px;">📱 Confirmar por WhatsApp</a>
+        <p>O llena el formulario: <a href="https://forms.gle/TU-LINK">aquí</a></p>
+    </div>
+
+    <script>
+        // Countdown
+        const countdown = document.getElementById('countdown');
+        const eventDate = new Date('2025-11-15T20:00:00').getTime();
+        
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            countdown.innerHTML = `⏳ Faltan: ${days} días y ${hours} horas`;
+        }, 1000);
+    </script>
+</body>
+</html>
